@@ -1,0 +1,27 @@
+{
+  "name": "netguru",
+  "version": "1.0.0",
+  "description": "Netguru recruitment task",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "cd public/ && ng build --prod -aot -op ../dist --output-hashing none",
+    "serve": "cd public/ && ng build --prod -aot -op ../dist --output-hashing none && cd .. && node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Getriax/Netguru-task.git"
+  },
+  "author": "Nikodem Strawa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Getriax/Netguru-task/issues"
+  },
+  "homepage": "https://github.com/Getriax/Netguru-task#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6"
+  }
+}
