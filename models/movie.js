@@ -1,3 +1,5 @@
+"use strict";
+
 const mongoose = require('mongoose'),
     Schema   = mongoose.Schema;
 
@@ -16,6 +18,7 @@ let movieSchema = new Schema({
     Country: String,
     Awards: String,
     Poster: String,
+    Ratings: [{type: Schema.Types.ObjectId, ref: 'rating', required: true}],
     Metascore: Number,
     imdbRating: Number,
     imdbVotes: Number,
@@ -27,3 +30,5 @@ let movieSchema = new Schema({
     Website: String,
     Response: Boolean
 });
+
+module.exports = mongoose.model('movie', movieSchema);

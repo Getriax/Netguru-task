@@ -1,13 +1,17 @@
-const express = require('express'),
-      port    = process.env.PORT || require('./config').port,
-      router  = require('./routes/router'),
-      db      = require("./services/database"),
-      app     = express();
+"use strict";
+
+const express     = require('express'),
+      port        = process.env.PORT || require('./config').port,
+      bodyParser  = require('body-parser'),
+      router      = require('./routes/router'),
+      db          = require("./services/database"),
+      app         = express();
 
 
 class Server {
 
     constructor() {
+        this.initMiddleware();
         this.initRoutes();
         this.initDatabase();
 
@@ -20,6 +24,10 @@ class Server {
             res.sendFile(__dirname + '/dist/index.html');
         });
 
+    }
+    initMiddleware() {
+        app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({extended: false}));
     }
     startServer() {
         app.listen(port, (err) => {
@@ -34,4 +42,4 @@ class Server {
 
 const server = new Server();
 
-
+module.exports = app; //for tests
