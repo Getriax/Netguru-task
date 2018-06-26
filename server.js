@@ -6,7 +6,8 @@ const express = require('express'),
 class Server {
 
     constructor() {
-
+        this.initRoutes();
+        this.startServer();
     }
     initRoutes() {
 
@@ -22,10 +23,8 @@ class Server {
         });
     }
 
-
 }
 
-
-
+const server = new Server();
 
 
