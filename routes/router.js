@@ -37,7 +37,7 @@ class Router {
                 //Load the JavaScript file ("controller") and pass the router to it
                 const controllerClass = require('../' + fullName);
                 const controller = new controllerClass(router);
-                
+
                 //Associate the route with the router
                 app.use(baseRoute, router);
             }

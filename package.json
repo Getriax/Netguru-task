@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "cd public/ && ng build --prod -aot -op ../dist --output-hashing none",
-    "serve": "cd public/ && ng build --prod -aot -op ../dist --output-hashing none && cd .. && node server.js"
+    "serve": "cd public/ && ng build --prod -aot -op ../dist --output-hashing none && cd .. && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
