@@ -1,5 +1,5 @@
 const express = require('express'),
-      port    = require('./config').port,
+      port    = process.env.PORT || require('./config').port,
       app     = express();
 
 
