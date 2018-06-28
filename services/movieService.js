@@ -17,7 +17,7 @@ class movieService {
             return res.status(422).json({error: 'Title is required'});
         }
 
-        let omdbRequest =  {
+        const omdbRequest =  {
             qs: {
                 apikey: '8d450d7b',
                 t: title
@@ -51,6 +51,7 @@ class movieService {
 
                 //Storing movie body for later usage
                 res.locals.movie = jsonBody;
+
                 next();
         })
             .catch(error => {

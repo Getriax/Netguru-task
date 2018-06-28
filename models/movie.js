@@ -28,7 +28,7 @@ let movieSchema = new Schema({
     BoxOffice: String,
     Production: String,
     Website: String,
-    Response: Boolean
+    Response: Boolean,
 });
 
 module.exports = mongoose.model('movie', movieSchema);
