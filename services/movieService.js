@@ -11,7 +11,7 @@ class movieService {
         let title;
 
         //If title is not presented in req.body, inform user that title is required
-        if('title' in req.body) {
+        if('title' in req.body || req.body.title !== undefined) {
             title = req.body.title;
         } else {
             return res.status(422).json({error: 'Title is required'});
@@ -41,10 +41,9 @@ class movieService {
             .then(body => {
                 let jsonBody = JSON.parse(body);
                 if(!("Title" in jsonBody))
-                    res.status(404).json({error: 'Movie not found'});
+                    return res.status(404).json({error: 'Movie not found'});
 
                 //Parsing values to match model parameters
-                jsonBody.imdbVotes = 'imdbVotes' in jsonBody ? jsonBody.imdbVotes.replace(',','.') : undefined;
                 jsonBody.Response = 'Response' in jsonBody ? jsonBody.Response.toLowerCase() === 'true' : undefined;
 
                 if(process.env.NODE_ENV === 'test')
@@ -56,7 +55,7 @@ class movieService {
         })
             .catch(error => {
                 console.log(error);
-                res.status(500).json(error);
+                return res.status(500).json(error);
             });
     }
 

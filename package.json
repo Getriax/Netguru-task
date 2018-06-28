@@ -7,7 +7,7 @@
     "start": "node server.js",
     "build": "cd public/ && ng build --prod -aot -op ../dist --output-hashing none",
     "serve": "cd public/ && ng build --prod -aot -op ../dist --output-hashing none && cd .. && node server.js",
-    "test":  "mocha -t 10000 ./test/**/*.spec.js"
+    "test": "mocha -t 10000 ./test/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Getriax/Netguru-task#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "mongoose": "^5.1.6",
     "request": "^2.87.0"

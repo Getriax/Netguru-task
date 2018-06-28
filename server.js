@@ -4,6 +4,7 @@ const express     = require('express'),
       port        = process.env.PORT || require('./config').port,
       bodyParser  = require('body-parser'),
       router      = require('./routes/router'),
+      cors        = require('cors'),
       db          = require("./services/database"),
       app         = express();
 
@@ -28,6 +29,7 @@ class Server {
     initMiddleware() {
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended: false}));
+        app.use(cors());
     }
     startServer() {
         app.listen(port, (err) => {
