@@ -1,4 +1,8 @@
 # Netguru recruitment task
+
+***The application is divided into 2 modules: server (.) and client (./public).***    
+Each module has its own npm package and tests.
+___
 **API for movies management.**
 Avaliable online **[here](https://getriax.herokuapp.com/)**
 ___
