@@ -1,5 +1,6 @@
-#tmp
-/public
+#public
+/public/node_modules
+
 
 # Logs
 logs

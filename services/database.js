@@ -4,7 +4,7 @@ const mongoose = require('mongoose'),
     connectionString = config.databaseUrl;
 
 
-
+//Connection with database
 class Database {
 
     constructor() {

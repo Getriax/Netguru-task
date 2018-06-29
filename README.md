@@ -1,15 +1,15 @@
 # Netguru recruitment task
-**App for movies management.**
+**API for movies management.**
 Avaliable online **[here](https://getriax.herokuapp.com/)**
 ___
->  To install run commands below
+>  To run locally
 
 		$ git clone https://github.com/Getriax/Netguru-task.git
 		$ npm install
 		$ npm start
 
 ___
-> To test simply run
+> To test
 
 		$ npm test
 ___

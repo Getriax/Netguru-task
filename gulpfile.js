@@ -2,6 +2,7 @@
 const db   = require('./services/database');
       gulp = require('gulp')  ;
 
+//Drop all collections
 gulp.task('drop', (done) => {
     db.open();
     let connection = db.connection;

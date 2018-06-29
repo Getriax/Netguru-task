@@ -1,7 +1,6 @@
 "use strict";
 
-const mongoose = require('mongoose'),
-      request  = require('request'),
+const request  = require('request'),
       Movie    = require('../models/movie');
 
 class movieService {
@@ -31,7 +30,7 @@ class movieService {
 
                 //Reject if request failed
                 if(error) {
-                    console.log(error);
+                    console.error(error);
                     reject({error: 'Request to omdb failed'})
                 }
 
@@ -55,7 +54,7 @@ class movieService {
                 next();
         })
             .catch(error => {
-                console.log(error);
+                console.error(error);
                 return res.status(500).json(error);
             });
     }
@@ -79,13 +78,12 @@ class movieService {
 
             })
             .catch(error => {
-                console.log(error);
+                console.error(error);
                 return res.status(500).json({error: "Error saving movie"});
             });
     }
 
     findAll(req, res) {
-
         let filter = {};
         let sort = {};
         let order = req.query.order || 1;

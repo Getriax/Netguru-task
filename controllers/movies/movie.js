@@ -9,7 +9,7 @@ class Movie {
         router.get('/',
             movieService.findAll.bind(this) //Find all movies
         );
-        //- /movies post request
+
         router.post('/',
             movieService.omdbSearch.bind(this), //Serch omdb database for the movie with title
             ratingService.create.bind(this), //Save ratings of the movie

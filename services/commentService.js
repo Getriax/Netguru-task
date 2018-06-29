@@ -1,11 +1,15 @@
-const mongoose = require('mongoose'),
-      Comment  = require('../models/comment');
+"use strict";
+const Comment  = require('../models/comment');
 
 class commentService {
 
     //creates a comment with a specified movie id
     create(req, res) {
         let commentBody = req.body;
+
+        //Check if body and movieId are specified
+        if(!('body' in req.body && 'movieId' in req.body))
+            return res.status(422).json({error: "Comment requires body and movieId properties"});
 
         Comment.create(commentBody)
             .then(data => {
